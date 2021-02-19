@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:local="clr-namespace:App.Mobile.ViewModel"
+             x:Class="App.Mobile.View.NotesView">
+
+    <ContentPage.BindingContext>
+        <local:NotesViewModel/>
+    </ContentPage.BindingContext>
+    
+
+    <!-- Main structure-->
+    <Grid RowDefinitions="Auto,Auto" RowSpacing="0">
+        <!-- Here add the code that is being explained in this block-->
+
+        <!-- 1.1 Main image-->
+        <PanCake:PancakeView Grid.Row="0" CornerRadius="0,0,60,60" HeightRequest="350">
+            <Grid ColumnDefinitions="*" BackgroundColor="#0d5d44" >
+
+                <StackLayout Orientation="Horizontal" Grid.Column="0">
+                    <Label  Text="Notas" TextColor="White" FontAttributes="Bold"
+                       FontSize="30" Margin="10,50,0,0"/>
+
+                    <Image  Source="NoteImage" 
+                           Margin="0,0,10,0" Aspect="AspectFit"
+                           HeightRequest="150" WidthRequest="150" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+            </Grid>
+        </PanCake:PancakeView>
+
+        <!--LIST OF NOTES-->
+        <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" Margin="0,-60,0,0">
+            <FlexLayout BindableLayout.ItemsSource="{Binding Notas}" 
+                       Wrap="Wrap"
+                       Direction="Row"
+                       JustifyContent="Start"
+                       AlignItems="Start"
+                       AlignContent="Start"
+                       Padding="8">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="4,4,4,4"
+                              FlexLayout.Basis="{OnIdiom Phone='50%', Tablet='33%'}"
+                              FlexLayout.AlignSelf="Start">
+                            <Frame 
+
+                                HasShadow="True" WidthRequest="200" HeightRequest="150">
+                                <Grid ColumnDefinitions="Auto" RowDefinitions="Auto,*,Auto">
+
+                                    <StackLayout Grid.Column="0" Grid.Row="0" 
+                                                 Orientation="Horizontal" Grid.ColumnSpan="2">
+                                        
+                                        <!--TITULO DA NOTACAO-->
+                                        <Label  Text="{Binding Titulo}" 
+                                               TextColor="Black" FontAttributes="Bold"
+                                               FontSize="15" />
+
+                                        <!--OPÇÕES DA NOTA-->
+                                        <Label  Text="" 
+                                               TextColor="Black" FontAttributes="Bold"
+                                               FontFamily="{StaticResource FontAwesomeSolid}" 
+                                               FontSize="15" HorizontalTextAlignment="End" 
+                                                HorizontalOptions="EndAndExpand" />
+                                    </StackLayout>
+                                    
+                                    <!--TEXTO DA ANOTAÇÃO-->
+                                    <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+                                           Text="{Binding Nota}" 
+                                           TextColor="Black" 
+                                           FontSize="15" HorizontalOptions="Fill" />
+
+                                    <!--DATA DA ANOTAÇÃO-->
+                                    <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2"
+                                       Text="{Binding Data}" 
+                                       TextColor="#999999" 
+                                       FontSize="15"  VerticalOptions="EndAndExpand"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </ScrollView>
+
+
+    </Grid>
+</ContentPage>
