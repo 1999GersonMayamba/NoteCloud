@@ -11,7 +11,7 @@ namespace App.Mobile
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new NotesView())
+            MainPage = new NavigationPage(new LoginView())
             {
                 BarBackgroundColor = Color.FromHex("#023047")
             };

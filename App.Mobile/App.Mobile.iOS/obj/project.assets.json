@@ -1169,7 +1169,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\": {},
+    "C:\\Users\\fabio\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
@@ -1178,7 +1178,7 @@
       "projectUniqueName": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile.iOS\\App.Mobile.iOS.csproj",
       "projectName": "App.Mobile.iOS",
       "projectPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile.iOS\\App.Mobile.iOS.csproj",
-      "packagesPath": "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
       "outputPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
@@ -1186,7 +1186,7 @@
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Gerson Mayamba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1194,7 +1194,6 @@
         "xamarinios10"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

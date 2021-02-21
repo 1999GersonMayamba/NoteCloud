@@ -498,3 +498,5 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\PancakeViewRenderer.java
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\RoundedCornerOutlineProvider.java
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\noteimage.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\createaccount.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\login.png

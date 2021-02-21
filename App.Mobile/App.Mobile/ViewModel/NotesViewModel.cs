@@ -29,9 +29,29 @@ namespace App.Mobile.ViewModel
             get => _NotaSeleciodado;
             set
             {
-                _NotaSeleciodado = value;
-                var args = new PropertyChangedEventArgs(nameof(NotaSeleciodado));
-                PropertyChanged?.Invoke(this, args);
+                if(_NotaSeleciodado != value)
+                {
+                    _NotaSeleciodado = value;
+                    NotaSelecled(); //Quando for selecionado uma nota invocar este método
+                    //var args = new PropertyChangedEventArgs(nameof(NotaSeleciodado));
+                    //PropertyChanged?.Invoke(this, args);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private async void NotaSelecled()
+        {
+            try
+            {
+                //await Application.Current.MainPage.DisplayAlert(_NotaSeleciodado.Titulo, _NotaSeleciodado.Nota, "Ok");
+                await Application.Current.MainPage.Navigation.PushAsync(new NoteView(_NotaSeleciodado));
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("NOVA NOTA", ex.Message, "Ok");
             }
         }
 
