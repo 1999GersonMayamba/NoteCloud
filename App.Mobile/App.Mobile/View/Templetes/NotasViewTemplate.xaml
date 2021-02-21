@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Mobile.View.Templetes.NotasViewTemplate">
+
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal">
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Vertical"
+                VerticalOptions="Center">
+                <Image
+                    HeightRequest="55"
+                    Margin="5,0,0,0"
+                    VerticalOptions="Center"
+                    WidthRequest="30">
+                    <Image.Source>
+                        <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"  
+                                 Glyph="" Color="{Binding Cor}" Size="30"/>
+                    </Image.Source>
+                </Image>
+            </StackLayout>
+            <StackLayout
+                Margin="10,0,0,0"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"
+                VerticalOptions="Center">
+                <StackLayout
+                    Margin="0,0,10,0"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <Label
+                        Margin="0,0,0,0"
+                        FontSize="17"
+                        HorizontalOptions="Start"
+                        Text="{Binding Titulo}"
+                        TextColor="#000000"
+                        XAlign="Start" />
+                    <Label
+                        FontSize="12"
+                        HorizontalOptions="EndAndExpand"
+                        Text="{Binding Data}"
+                        TextColor="Gray"
+                        XAlign="End" />
+                </StackLayout>
+                <StackLayout
+                    Margin="0,0,10,10"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <Image
+                        HeightRequest="15"
+                        HorizontalOptions="Start" >
+
+                        <Image.Source>
+                            <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"  
+                                 Glyph="" Color="#ffc300" Size="10"/>
+                        </Image.Source>
+                    </Image>
+                    <Label
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Text="{Binding Nota}"
+                        TextColor="Gray"
+                        LineBreakMode="TailTruncation"
+                        XAlign="Start" />
+                </StackLayout>
+                <StackLayout
+                    Margin="0,0,10,0"
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <BoxView
+                        HeightRequest="0.3"
+                        HorizontalOptions="FillAndExpand"
+                        Color="LightGray" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

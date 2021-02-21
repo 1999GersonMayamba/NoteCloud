@@ -1,4 +1,5 @@
 ﻿using App.Mobile.Model;
+using App.Mobile.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,6 +20,20 @@ namespace App.Mobile.ViewModel
         public ICommand AddNoteCommand => new Command(AddNote);
         public ICommand RemoveNoteCommand => new Command(RemoveNote);
         public ICommand UpdateNoteCommand => new Command(UpdateNote);
+
+        public ICommand NewNoteCommand => new Command(NewNote);
+        private Note _NotaSeleciodado { get; set; }
+
+        public Note NotaSeleciodado
+        {
+            get => _NotaSeleciodado;
+            set
+            {
+                _NotaSeleciodado = value;
+                var args = new PropertyChangedEventArgs(nameof(NotaSeleciodado));
+                PropertyChanged?.Invoke(this, args);
+            }
+        }
 
         public NotesViewModel()
         {
@@ -42,6 +57,18 @@ namespace App.Mobile.ViewModel
             //Notas.Add(note);
             //Notas.Add(note);
 
+        }
+
+        public async void NewNote()
+        {
+            try
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new NoteView());
+            }
+            catch(Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("NOVA NOTA", ex.Message, "Ok");
+            }
         }
 
         public void AddNote()

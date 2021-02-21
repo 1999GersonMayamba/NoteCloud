@@ -11,7 +11,10 @@ namespace App.Mobile
         {
             InitializeComponent();
 
-            MainPage = new NotesView();
+            MainPage = new NavigationPage(new NotesView())
+            {
+                BarBackgroundColor = Color.FromHex("#023047")
+            };
         }
 
         protected override void OnStart()

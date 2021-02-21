@@ -17,3 +17,4 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile\obj\Debug\netsta
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile\obj\Debug\netstandard2.0\View\NotesView.xaml.g.cs
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile\obj\Debug\netstandard2.0\View\NoteView.xaml.g.cs
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile\obj\Debug\netstandard2.0\View\RegisterView.xaml.g.cs
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile\obj\Debug\netstandard2.0\View\Templetes\NotasViewTemplate.xaml.g.cs
