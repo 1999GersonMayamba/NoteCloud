@@ -6,15 +6,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Templete.Data.Interface;
 using Templete.Data.Model;
+using WebApi.Auth;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebApi.Controllers
 {
 
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         private readonly ICliente _ClienteRepository;
@@ -24,7 +25,7 @@ namespace WebApi.Controllers
         }
 
 
-       
+      
         // GET: api/<ClienteController>
         [HttpGet]
         public IActionResult Get()

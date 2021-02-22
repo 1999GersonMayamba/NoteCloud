@@ -8615,8 +8615,9 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\fabio\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -8624,14 +8625,15 @@
       "projectUniqueName": "C:\\Projectos Visual Studio 2019\\NoteCloud\\Templete.Identity\\Templete.Identity.csproj",
       "projectName": "Templete.Identity",
       "projectPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\Templete.Identity\\Templete.Identity.csproj",
-      "packagesPath": "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
       "outputPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\Templete.Identity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Gerson Mayamba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -8639,7 +8641,6 @@
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
