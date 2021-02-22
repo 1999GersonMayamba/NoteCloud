@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,10 @@ using Templete.Data.Model;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+
+    [Authorize]
     [ApiController]
+    [Route("api/[controller]")]
     public class ClienteController : ControllerBase
     {
         private readonly ICliente _ClienteRepository;
@@ -21,6 +24,7 @@ namespace WebApi.Controllers
         }
 
 
+       
         // GET: api/<ClienteController>
         [HttpGet]
         public IActionResult Get()

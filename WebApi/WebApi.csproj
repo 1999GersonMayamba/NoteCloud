@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Templete.Data\Templete.Data.csproj" />
+    <ProjectReference Include="..\Templete.Identity\Templete.Identity.csproj" />
   </ItemGroup>
 
 

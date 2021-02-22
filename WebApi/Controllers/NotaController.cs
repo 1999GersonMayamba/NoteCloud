@@ -10,8 +10,9 @@ using Templete.Data.Model;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
+
     [ApiController]
+    [Route("api/[controller]")]
     public class NotaController : ControllerBase
     {
 
