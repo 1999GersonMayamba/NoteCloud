@@ -138,5 +138,7 @@ namespace App.Mobile.ViewModel
         //        PropertyChanged?.Invoke(this, args);
         //    }
         //}
+
+
     }
 }
