@@ -500,3 +500,6 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\noteimage.png
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\createaccount.png
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\login.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\facebookicon.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\googleicon.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll

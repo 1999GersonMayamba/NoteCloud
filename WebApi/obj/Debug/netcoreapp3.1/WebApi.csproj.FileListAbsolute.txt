@@ -144,3 +144,4 @@ C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\zh-Hans
 C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Templete.Identity.dll
 C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Templete.Identity.pdb
+C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

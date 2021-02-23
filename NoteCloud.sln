@@ -5,15 +5,15 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{AC072D6A-4DFE-4E93-9089-AAF7CAD95172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{6269AA36-FAB8-4825-AAF0-F670A4D62992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{6269AA36-FAB8-4825-AAF0-F670A4D62992}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A523C648-38F5-44D6-85A0-FE1FC6219407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templete.Data", "Templete.Data\Templete.Data.csproj", "{F4C6D3B8-BF85-4E20-B6A1-BA68A60A1F01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Templete.Data", "Templete.Data\Templete.Data.csproj", "{F4C6D3B8-BF85-4E20-B6A1-BA68A60A1F01}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{7896FFD6-E71B-44F6-B22A-F25D607954FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templete.Identity", "Templete.Identity\Templete.Identity.csproj", "{090BCBE7-6DAE-465F-9D6B-B341B469BB7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Templete.Identity", "Templete.Identity\Templete.Identity.csproj", "{090BCBE7-6DAE-465F-9D6B-B341B469BB7D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{1F76EA80-42F1-4C13-B8F4-CCFC6FCDBD22}"
 EndProject
@@ -21,7 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Mobile.Android", "App.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Mobile.iOS", "App.Mobile\App.Mobile.iOS\App.Mobile.iOS.csproj", "{59668C9F-27DF-41F3-B0CC-9B4A8B3735C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Mobile", "App.Mobile\App.Mobile\App.Mobile.csproj", "{94AE3E69-9E45-40E8-961C-1D039C1ECC84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Mobile", "App.Mobile\App.Mobile\App.Mobile.csproj", "{94AE3E69-9E45-40E8-961C-1D039C1ECC84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script", "Script", "{FF1555BD-AB10-4B1D-9F0B-09256075DEE1}"
+	ProjectSection(SolutionItems) = preProject
+		Soluction IIS APPPOOL.txt = Soluction IIS APPPOOL.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
