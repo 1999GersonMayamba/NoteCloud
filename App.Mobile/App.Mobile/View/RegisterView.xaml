@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App.Mobile.ViewModel"
              x:Class="App.Mobile.View.RegisterView">
+
+
+    <ContentPage.BindingContext>
+        <local:RegisterViewModel/>
+    </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <ScrollView>
@@ -39,8 +45,11 @@
                 </StackLayout>
 
                 <!--BOTÃO PARA PODER LOGAR-->
-                <Button Text="Registar-se" Margin="20,0" BackgroundColor="#f3e367"
-                        TextColor="#373833" CornerRadius="5" FontAttributes="Bold"/>
+                <Button Text="Registar-se" Margin="20,0" 
+                        BackgroundColor="#f3e367"
+                        Command="{Binding RegistarCommand}"
+                        TextColor="#373833" CornerRadius="5"
+                        FontAttributes="Bold"/>
 
                 <!--OPÇÃO PARA USAR REDE SOCIAL-->
                 <Label Text="Ou usar as redes social" HorizontalTextAlignment="Center"/>
@@ -64,7 +73,12 @@
                            HorizontalOptions="StartAndExpand"/>
 
                     <Label Text="Entrar" FontAttributes="Bold"
-                           HorizontalOptions="EndAndExpand" VerticalTextAlignment="End"/>
+                           HorizontalOptions="EndAndExpand" VerticalTextAlignment="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding LoginCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

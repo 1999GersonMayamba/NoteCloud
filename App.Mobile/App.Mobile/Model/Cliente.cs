@@ -11,7 +11,6 @@ namespace App.Mobile.Model
         public string Email { get; set; }
         public string Telefone { get; set; }
         public string Endereco { get; set; }
-
         public virtual ICollection<Note> Nota { get; set; }
     }
 }

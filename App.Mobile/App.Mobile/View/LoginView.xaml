@@ -68,9 +68,14 @@
                 <StackLayout Orientation="Horizontal" Margin="20,20,20,20">
                     <Label Text="Tens uma conta?" 
                            HorizontalOptions="StartAndExpand"/>
-                    
+
                     <Label Text="Registar-se agora" FontAttributes="Bold"
-                           HorizontalOptions="EndAndExpand" VerticalTextAlignment="End"/>
+                           HorizontalOptions="EndAndExpand" VerticalTextAlignment="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding RegisterCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
