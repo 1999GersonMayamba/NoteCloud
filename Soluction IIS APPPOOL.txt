@@ -1,0 +1,19 @@
+
+
+#Problema
+The server principal "IIS APPPOOL\NoteCloud" is not able to access the database "NoteCloud" under the current security context.
+Cannot open database "NoteCloud" requested by the login. The login failed.
+Login failed for user 'IIS APPPOOL\NoteCloud'.
+A severe error occurred on the current command.  The results, if any, should be discarded.
+
+#Solução
+CREATE LOGIN [IIS APPPOOL\NoteCloud] FROM WINDOWS
+GO
+--USE Table Name
+GO
+CREATE USER [IIS APPPOOL\NoteCloud] FOR LOGIN [IIS APPPOOL\NoteCloud]
+GO
+EXEC sp_addrolemember 'db_datareader', 'IIS APPPOOL\NoteCloud'
+GO
+EXEC sp_addrolemember 'db_datawriter', 'IIS APPPOOL\NoteCloud'
+GO

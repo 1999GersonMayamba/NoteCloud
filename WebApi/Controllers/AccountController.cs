@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Templete.Data.Model;
 using Templete.Identity.Model;
+using WebApi.Token.Jwt;
 
 namespace WebApi.Controllers
 {
@@ -17,13 +23,15 @@ namespace WebApi.Controllers
 
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly AppSettings _appSettings;
 
 
         public AccountController(SignInManager<IdentityUser> signInManager,
-                                    UserManager<IdentityUser> userManager)
+                                    UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _appSettings = appSettings.Value;
         }
 
         [HttpPost("nova-conta")]
@@ -81,7 +89,7 @@ namespace WebApi.Controllers
 
                     if(result.Succeeded)
                     {
-                        return Ok();
+                        return Ok(await GerarToken(loginUser.Email));
                     }
 
                     return BadRequest("Usuário Invalido");
@@ -92,6 +100,34 @@ namespace WebApi.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        [HttpPost("gerar-token")]
+        public async Task<string> GerarToken( string email)
+        {
+
+                    //Buscar o usuario
+                    var result = await _userManager.FindByEmailAsync(email);
+
+            //Adicionar claims do utilizador no Token no acto da criação
+            var identityClaims = new ClaimsIdentity();
+            identityClaims.AddClaims(await _userManager.GetClaimsAsync(result));
+
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+                    var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = identityClaims,
+                    Issuer = _appSettings.Emissor,
+                    Audience = _appSettings.ValidoEm,
+                    Expires = DateTime.UtcNow.AddDays(_appSettings.ExpiracaoHoras),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature)
+                };
+
+            return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
+   
         }
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sG3oj+uax1TX1+3w/3jwLj7du//co0Fcsyuq+fxT8mX4qFHbcCMax5mAfv/dR3nMNpooZ7ZEwAo+o4NLxcNcyQ==",
+  "dgSpecHash": "90LrFD9Y+x3thU8Cy9VsSd5+avQ2HMsbXh+DaY499uKCOzPLvxmiAqpruz/O28UNi1n1X6+UJRXz7+oD8t5yVw==",
   "success": true,
   "projectFilePath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.1\\microsoft.aspnetcore.authentication.jwtbearer.3.1.1.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.11\\microsoft.aspnetcore.cryptography.internal.3.1.11.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.11\\microsoft.aspnetcore.cryptography.keyderivation.3.1.11.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

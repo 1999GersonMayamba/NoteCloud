@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
-    <SelectedDevice>pixel_2_xl_oreo_8_1_-_api_27</SelectedDevice>
-    <DefaultDevice>pixel_2_xl_oreo_8_1_-_api_27</DefaultDevice>
+    <SelectedDevice>SUNMI V1-B18</SelectedDevice>
+    <DefaultDevice>my_device</DefaultDevice>
   </PropertyGroup>
 </Project>

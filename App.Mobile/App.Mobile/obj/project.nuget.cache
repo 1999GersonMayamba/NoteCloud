@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "q8/sTlmb22Hw9FZu6+Jzu3c9P2wrByVw+56fWLZJ2jTDYsNrw/+IJNWt+5YoJ+kuYNlQ+COZfYbpMGudDgYJHQ==",
+  "dgSpecHash": "JGUbTUmqiywDKQm8JckRrNpVL3Y83NrIorjSYQL8TAUbT6geJmYVfMgtSC7MG3F7smMYPqYgKfdiQ0TzPR4xxA==",
   "success": true,
   "projectFilePath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile\\App.Mobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
