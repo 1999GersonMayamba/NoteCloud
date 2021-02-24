@@ -63,7 +63,7 @@ namespace App.Mobile.ViewModel
                     Account account = new Account();
                     account.Email = _email;
                     account.Password = _senha;
-                    account.ConfirPasswrd = _senha;
+                    account.ConfirPassword = _senha;
                     API_Account aPI_Account = new API_Account();
                     var Result = await aPI_Account.Login(account) as Account;
                     if(!string.IsNullOrEmpty(Result.Grupo))

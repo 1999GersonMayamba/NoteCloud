@@ -20,6 +20,7 @@ using Templete.Data.Interface;
 using Templete.Data.Repositories;
 using Templete.Identity.Context;
 using Templete.Identity.Model;
+using WebApi.Filter;
 using WebApi.Token.Jwt;
 
 namespace WebApi
@@ -41,6 +42,8 @@ namespace WebApi
             services.AddSingleton<ICliente, ClienteRespository>();
             services.AddSingleton<INota, NotaRepository>();
 
+            //Registar os filtros da web api
+            services.AddScoped<AccountFilter>();
             //REGISTO DO PROVEDOR DE AUTENTICAÇÃO E SUA CONTEXT
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddIdentity<IdentityUser, IdentityRole>()

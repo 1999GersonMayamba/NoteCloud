@@ -11,5 +11,10 @@ namespace Templete.Identity.Model
         public string Token { get; set; }
         public string Grupo { get; set; }
         public string Nome { get; set; }
+        public string Status { get; set; }
+
+        public string Message { get; set; }
+
+        public string DetailMessage { get; set; }
     }
 }
