@@ -58,7 +58,7 @@ namespace App.Mobile.Data.Api
 		/// </summary>
 		/// <param name="account">Objecto com os dados do utilixador</param>
 		/// <returns></returns>
-		public async Task<string> CreateAccount(Account account)
+		public async Task<Account> CreateAccount(Account account)
 		{
 
 			var json = JsonConvert.SerializeObject(account);
@@ -71,22 +71,26 @@ namespace App.Mobile.Data.Api
 				if (result.StatusCode == System.Net.HttpStatusCode.Created)
 				{
 					var error = await result.Content.ReadAsStringAsync();
-					return error;
+					var Result = JsonConvert.DeserializeObject<Account>(error);
+					return Result;
 				}
 				else if (result.StatusCode == System.Net.HttpStatusCode.OK)
 				{
 					var error = await result.Content.ReadAsStringAsync();
-					return error;
+					var Result = JsonConvert.DeserializeObject<Account>(error);
+					return Result;
 				}
 				else if (result.StatusCode == System.Net.HttpStatusCode.InternalServerError)
 				{
 					var error = await result.Content.ReadAsStringAsync();
-					return "Servidor indisponivel.";
+					var Result = JsonConvert.DeserializeObject<Account>(error);
+					return Result;
 				}
 				else
 				{
 					var error = await result.Content.ReadAsStringAsync();
-					return error;
+					var Result = JsonConvert.DeserializeObject<Account>(error);
+					return Result;
 				}
 			};
 		}

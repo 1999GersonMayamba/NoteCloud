@@ -1,5 +1,6 @@
 ﻿using App.Mobile.Data.Api;
 using App.Mobile.Model;
+using App.Mobile.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,18 +18,18 @@ namespace App.Mobile.ViewModel
 
         private string _email { get; set; }
         private string _senha { get; set; }
-
         public string _nome { get; set; }
+        public string _endereco { get; set; }
+        public string _telefone { get; set; }
+
         public string Email
         {
             get => _email;
             set
             {
                 _email = value;
-
             }
-        }
-
+        }      
         public string Senha
         {
             get => _senha;
@@ -37,6 +38,34 @@ namespace App.Mobile.ViewModel
                 _senha = value;
 
             }
+        }
+
+        public string Nome
+        {
+            get => _nome;
+            set
+            {
+                _nome = value;
+            }
+        }
+
+        public string Telefone
+        {
+            get => _telefone;
+            set
+            {
+                _telefone = value;
+            }
+        }
+
+        public string Endereco
+        {
+            get => _endereco;
+            set
+            {
+                _endereco = value;
+            }
+
         }
         private async void Registar(object obj)
         {
@@ -58,28 +87,38 @@ namespace App.Mobile.ViewModel
                 {
                     await Application.Current.MainPage.DisplayAlert("NOME", "Preencher o campo NOME para poder criar a sua conta.", "Ok");
                 }
+                else if (string.IsNullOrEmpty(_endereco))
+                {
+                    await Application.Current.MainPage.DisplayAlert("ENREDEÇO", "Preencher o campo ENDEREÇO para poder criar a sua conta.", "Ok");
+                }
+                else if (string.IsNullOrEmpty(_telefone))
+                {
+                    await Application.Current.MainPage.DisplayAlert("TELEFONE", "Preencher o campo TELEFONE para poder criar a sua conta.", "Ok");
+                }
                 else
                 {
+                    //Formar o objecto para poder criar conta na app
                     Account account = new Account();
                     account.Email = _email;
                     account.Password = _senha;
-                    account.ConfirPasswrd = _senha;
+                    account.ConfirPassword = _senha;
                     account.Nome = _nome;
-                    API_Account aPI_Account = new API_Account();
-                    //var Result = await aPI_Account.CreateAccount(account) as Account;
-                    //if (!string.IsNullOrEmpty(Result.Grupo))
-                    //{
-                    //    // await Application.Current.MainPage.Navigation.PushAsync( NotesViewModel());
-                    //    Application.Current.MainPage = new NavigationPage(new NotesView())
-                    //    {
-                    //        BarBackgroundColor = Color.FromHex("#023047")
-                    //    };
-                    //}
-                    //else
-                    //{
-                    //    await Application.Current.MainPage.DisplayAlert("LOGIN", "Usuário Invalido", "Ok");
+                    account.Endereco = _endereco;
+                    account.Telefone = _telefone;
 
-                    //}
+                    //Registar o cliente
+                    API_Account aPI_Account = new API_Account();
+                    Account account1 = await aPI_Account.CreateAccount(account);
+
+                    if(string.IsNullOrEmpty(account1.Token))
+                    {
+                        await Application.Current.MainPage.DisplayAlert(account1.Message, account1.DetailMessage, "Ok");
+
+                    }else
+                    {
+                        Application.Current.MainPage = new NavigationPage(new NotesView());
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -87,7 +126,6 @@ namespace App.Mobile.ViewModel
                 await Application.Current.MainPage.DisplayAlert("REGISTAR", ex.Message, "Ok");
             }
         }
-
         private async void Login(object obj)
         {
             try

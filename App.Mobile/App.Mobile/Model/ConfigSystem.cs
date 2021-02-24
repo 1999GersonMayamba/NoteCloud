@@ -6,7 +6,7 @@ namespace App.Mobile.Model
 {
    public static class ConfigSystem
     {
-        private static string urlapi = "http://192.168.1.44:84/api";
+        private static string urlapi = "http://127.0.0.1:5000/api";
         public static string URLAPI
         {
             get { return urlapi; }

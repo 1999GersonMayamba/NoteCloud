@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile.Android\\App.Mobile.Android.csproj",
         "projectName": "App.Mobile.Android",
         "projectPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile.Android\\App.Mobile.Android.csproj",
-        "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\",
         "outputPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
@@ -18,7 +18,7 @@
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gerson Mayamba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -26,6 +26,7 @@
           "monoandroid90"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,15 +68,14 @@
         "projectUniqueName": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile\\App.Mobile.csproj",
         "projectName": "App.Mobile",
         "projectPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile\\App.Mobile.csproj",
-        "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\",
         "outputPath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gerson Mayamba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -83,6 +83,7 @@
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

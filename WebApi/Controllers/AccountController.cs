@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Templete.Data.Interface;
 using Templete.Data.Model;
 using Templete.Identity.Model;
+using WebApi.Filter;
 using WebApi.Token.Jwt;
 
 namespace WebApi.Controllers
@@ -37,6 +38,7 @@ namespace WebApi.Controllers
             _ClienteRepository = ClienteRepository;
         }
 
+        [ServiceFilter(typeof(AccountFilter))]
         [HttpPost("nova-conta")]
         public async Task<ActionResult> Post([FromBody] RegiterUser regiterUser)
         {
@@ -47,6 +49,17 @@ namespace WebApi.Controllers
                     return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
                 }else
                 {
+
+                    //Montar o objecto para criar conta do cliente
+                    var UserCliente = new Cliente()
+                    {
+                        Email = regiterUser.Email,
+                        Nome = regiterUser.Nome,
+                        Telefone = regiterUser.Telefone,
+                        Endereco = regiterUser.Endereco
+                    };
+
+                    //Montar o objecto para criar o usuário
                     var user = new IdentityUser
                     {
                         UserName = regiterUser.Email,
@@ -54,46 +67,41 @@ namespace WebApi.Controllers
                         EmailConfirmed = true
                     };
 
-                    //Criar o usuario com user-manager
-                    var result = await _userManager.CreateAsync(user, regiterUser.Password);
+                    //Registar o cliente
+                    var cliente = _ClienteRepository.Insert(UserCliente);
 
-                    var UserCliente = new Cliente()
+                    //Se a conta de utilizar for criado com sucesso
+                    if(cliente == 1)
                     {
-                        Email = regiterUser.Email,
-                        Nome = regiterUser.Nome,
-                        Telefone = Guid.NewGuid().ToString(),
-                        Endereco = Guid.NewGuid().ToString()
-                    };
+                        //Criar o usuario com user-manager
+                        var result = await _userManager.CreateAsync(user, regiterUser.Password);
 
+                        //Se o correr um erro ao tentar registar o usuario retornar os erros
+                        if (!result.Succeeded) return BadRequest(result.Errors);
 
-                    //Se o correr um erro ao tentar registar o usuario retornar os erros
-                    if (!result.Succeeded)
-                    {
-                        return BadRequest(result.Errors);
-                    }else
-                    {
-                        //Registar o cliente
-                        var cliente = _ClienteRepository.Insert(UserCliente);
+                        //Caso contrario autenticar o usuario
+                        await _signInManager.SignInAsync(user, false);
 
+                        var LoginUser = new LoginUser()
+                        {
+                            Email = regiterUser.Email,
+                            Password = regiterUser.Password,
+                            Nome = regiterUser.Nome
+                        };
+
+                        return Ok(await GerarToken(LoginUser));
                     }
-                    //Caso contrario autenticar o usuario
-                    await _signInManager.SignInAsync(user, false);
-                    var LoginUser = new LoginUser()
+                    else
                     {
-                        Email = regiterUser.Email,
-                        Password = regiterUser.Password,
-                        Nome = regiterUser.Nome
-                    };
-
-                    return Ok( await GerarToken(LoginUser));
+                        return BadRequest("Ocorreu um erro ao tentar registar o cliente");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                throw new NotImplementedException(ex.InnerException.Message);
             }
         }
-
 
 
         [HttpPost("entrar")]
@@ -154,7 +162,7 @@ namespace WebApi.Controllers
             loginUser.Password = null;
             loginUser.Grupo = "Cliente";
             loginUser.Token = tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
-           
+            loginUser.Status = "Sucess";
             return loginUser;
    
         }

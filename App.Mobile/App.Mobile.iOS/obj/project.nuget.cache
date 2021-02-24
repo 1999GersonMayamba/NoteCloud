@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "hA+RkRmp3rhwTQvhN0t10pozu+A4OWHnHNwo3qSe4cKnY5LxN7SjzPIJ/GlXakYTf+V57nKW/tbo6LuJe2OU+g==",
+  "dgSpecHash": "uBtNq+qXAur5x+8RJ6edrgcdMk22kk63+7pOTRLywNyUobpR8bQYWFW9QlgZcqPn0XjLYB0jBa71zRZsftkibw==",
   "success": true,
   "projectFilePath": "C:\\Projectos Visual Studio 2019\\NoteCloud\\App.Mobile\\App.Mobile.iOS\\App.Mobile.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fabio\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\fabio\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
-    "C:\\Users\\fabio\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\fabio\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
-    "C:\\Users\\fabio\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
+    "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
+    "C:\\Users\\Gerson Mayamba\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
   ],
   "logs": []
 }

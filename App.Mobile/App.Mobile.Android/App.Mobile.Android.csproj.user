@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
-    <SelectedDevice>SUNMI V1-B18</SelectedDevice>
-    <DefaultDevice>my_device</DefaultDevice>
+    <SelectedDevice>pixel_2_kit_kat_4_4_-_api_19</SelectedDevice>
+    <DefaultDevice>pixel_2_kit_kat_4_4_-_api_19</DefaultDevice>
   </PropertyGroup>
 </Project>
