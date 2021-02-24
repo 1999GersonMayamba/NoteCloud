@@ -1,5 +1,6 @@
 ﻿using App.Mobile.Data.Api;
 using App.Mobile.Model;
+using App.Mobile.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace App.Mobile.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand LoginCommand => new Command(Login);
+        public ICommand RegisterCommand => new Command(Regiser);
+
         private string _email { get; set; }
         private string _senha { get; set; }
 
@@ -36,7 +39,6 @@ namespace App.Mobile.ViewModel
 
             }
         }
-
 
         private async void Login(object obj)
         {
@@ -63,14 +65,40 @@ namespace App.Mobile.ViewModel
                     account.Password = _senha;
                     account.ConfirPasswrd = _senha;
                     API_Account aPI_Account = new API_Account();
-                    var Result = await aPI_Account.Login(account);
+                    var Result = await aPI_Account.Login(account) as Account;
+                    if(!string.IsNullOrEmpty(Result.Grupo))
+                    {
+                        // await Application.Current.MainPage.Navigation.PushAsync( NotesViewModel());
+                        Application.Current.MainPage = new  NavigationPage(new NotesView())
+                        {
+                            BarBackgroundColor = Color.FromHex("#023047")
+                        };
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("LOGIN", "Usuário Invalido", "Ok");
+
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("LOGIN", ex.Message, "Ok");
+                await Application.Current.MainPage.DisplayAlert("ENTRAR", ex.Message, "Ok");
             }
+        }
+
+        private async void Regiser(object obj)
+        {
+            try
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new RegisterView());
+            }
+            catch(Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("ENTRAR", ex.Message, "Ok");
+            }
+
         }
     }
 }

@@ -12,7 +12,7 @@
         <local:NotesViewModel/>
     </ContentPage.BindingContext>
 
-
+    
     <!--BOTÕES DA BARRA SUPERIOR DA APLICAÇÃO-->
     <ContentPage.ToolbarItems>
         <!--BOTÃO PARA CRIAR UMA NOVA NOTA-->
