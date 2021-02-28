@@ -18,11 +18,15 @@ namespace App.Mobile.Data.Api
 		/// <returns></returns>
 		public async Task<Cliente> NotasCliente(string id_cliente)
 		{
+			var httpClientHandler = new HttpClientHandler();
+			httpClientHandler.ServerCertificateCustomValidationCallback =
+			(message, cert, chain, errors) => { return true; };
+		
 			try
 			{
-				using (var client = new HttpClient())
+				using (var client = new HttpClient(httpClientHandler))
 				{
-					string URL = string.Concat(ConfigSystem.URLAPI, "/api/cliente/", id_cliente);//ESTRUTURA DA URI DO CONTROLLER
+					string URL = string.Concat(ConfigSystem.URLAPI, "/cliente/Notes/", id_cliente);//ESTRUTURA DA URI DO CONTROLLER
 					client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ConfigSystem.Token);
 					var uri = new Uri(URL);
 					HttpResponseMessage response = await client.GetAsync(uri);
@@ -55,10 +59,14 @@ namespace App.Mobile.Data.Api
 
 		public async Task<string> RegistarCliente(Cliente cliente)
 		{
+			var httpClientHandler = new HttpClientHandler();
+
+			httpClientHandler.ServerCertificateCustomValidationCallback =
+			(message, cert, chain, errors) => { return true; };
 
 			var json = JsonConvert.SerializeObject(cliente);
 			var content = new StringContent(json, Encoding.UTF8, "application/json");
-			using (var client = new HttpClient())
+			using (var client = new HttpClient(httpClientHandler))
 			{
 				string URL = string.Concat(ConfigSystem.URLAPI, "/api/cliente");//ESTRUTURA DA URI DO CONTROLLER
 				client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ConfigSystem.Token);

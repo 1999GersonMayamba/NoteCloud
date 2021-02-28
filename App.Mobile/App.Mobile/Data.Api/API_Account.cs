@@ -18,10 +18,14 @@ namespace App.Mobile.Data.Api
 		/// <returns></returns>
 		public async Task<Account> Login(Account account)
 		{
+            var httpClientHandler = new HttpClientHandler();
 
-			var json = JsonConvert.SerializeObject(account);
+            httpClientHandler.ServerCertificateCustomValidationCallback =
+            (message, cert, chain, errors) => { return true; };
+
+            var json = JsonConvert.SerializeObject(account);
 			var content = new StringContent(json, Encoding.UTF8, "application/json");
-			using (var client = new HttpClient())
+			using (var client = new HttpClient(httpClientHandler))
 			{
 				string URL = string.Concat(ConfigSystem.URLAPI, "/account/entrar");//ESTRUTURA DA URI DO CONTROLLER
 				//client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ConfigSystem.Token);
@@ -60,10 +64,14 @@ namespace App.Mobile.Data.Api
 		/// <returns></returns>
 		public async Task<Account> CreateAccount(Account account)
 		{
+            var httpClientHandler = new HttpClientHandler();
 
-			var json = JsonConvert.SerializeObject(account);
+            httpClientHandler.ServerCertificateCustomValidationCallback =
+            (message, cert, chain, errors) => { return true; };
+
+            var json = JsonConvert.SerializeObject(account);
 			var content = new StringContent(json, Encoding.UTF8, "application/json");
-			using (var client = new HttpClient())
+			using (var client = new HttpClient(httpClientHandler))
 			{
 				string URL = string.Concat(ConfigSystem.URLAPI, "/account/nova-conta");//ESTRUTURA DA URI DO CONTROLLER
 																			//client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ConfigSystem.Token);

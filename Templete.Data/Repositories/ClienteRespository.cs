@@ -18,14 +18,14 @@ namespace Templete.Data.Repositories
 
         }
 
-        public Cliente GetNote(Guid id)
+        public Cliente GetNote(string email)
         {
             using (var DataContext = new NoteCloudContext())
             {
 
                 //Buscar as notas de um determinado cliente
                 var Cliente = DataContext.Cliente.Include(a => a.Nota)
-                    .Where(p => p.Id == id).First();
+                    .Where(p => p.Email == email).First();
 
                 return Cliente;
             }

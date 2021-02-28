@@ -46,7 +46,7 @@ namespace App.Mobile.ViewModel
         }
         public NoteViewModel(Note note)
         {
-            _nota = note.Nota;
+            _nota = note.Nota1;
             _titulo = note.Titulo;
         }
 

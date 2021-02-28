@@ -12,7 +12,7 @@ namespace Templete.Data.Interface
         int Update(Guid id, Cliente cliente);
         List<Cliente> GetAll();
         Cliente Get(Guid id);
-        Cliente GetNote(Guid id);
+        Cliente GetNote(string email);
 
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace App.Mobile.ViewModel
@@ -66,9 +67,15 @@ namespace App.Mobile.ViewModel
                     account.ConfirPassword = _senha;
                     API_Account aPI_Account = new API_Account();
                     var Result = await aPI_Account.Login(account) as Account;
-                    if(!string.IsNullOrEmpty(Result.Grupo))
+                    if(Result.Status == "Sucess")
                     {
-                        // await Application.Current.MainPage.Navigation.PushAsync( NotesViewModel());
+                        //Se o login ocorrer com sucesso guadar o token
+                        await SecureStorage.SetAsync("oauth_token", Result.Token);
+                        ConfigSystem.Token = Result.Token;
+                        //Guardar o email do utilizador
+                        await SecureStorage.SetAsync("email_user", Result.Email);
+                        ConfigSystem.Email = Result.Email;
+
                         Application.Current.MainPage = new  NavigationPage(new NotesView())
                         {
                             BarBackgroundColor = Color.FromHex("#023047")

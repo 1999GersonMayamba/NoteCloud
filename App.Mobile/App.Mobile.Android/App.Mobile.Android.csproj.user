@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
-    <SelectedDevice>pixel_2_kit_kat_4_4_-_api_19</SelectedDevice>
-    <DefaultDevice>pixel_2_kit_kat_4_4_-_api_19</DefaultDevice>
+    <SelectedDevice>pixel_2_lollipop_5_1_-_api_22</SelectedDevice>
+    <DefaultDevice>pixel_2_lollipop_5_1_-_api_22</DefaultDevice>
   </PropertyGroup>
 </Project>

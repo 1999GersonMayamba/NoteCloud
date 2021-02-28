@@ -1,4 +1,5 @@
-﻿using App.Mobile.View;
+﻿using App.Mobile.Model;
+using App.Mobile.View;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,10 +12,19 @@ namespace App.Mobile
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginView())
+            if(ConfigSystem.InitialPage == 1)
             {
-                BarBackgroundColor = Color.FromHex("#023047")
-            };
+                MainPage = new NavigationPage(new NotesView())
+                {
+                    BarBackgroundColor = Color.FromHex("#023047")
+                };
+            }else
+            {
+                MainPage = new NavigationPage(new LoginView())
+                {
+                    BarBackgroundColor = Color.FromHex("#023047")
+                };
+            }
         }
 
         protected override void OnStart()

@@ -15,7 +15,7 @@ namespace WebApi.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class ClienteController : ControllerBase
     {
         private readonly ICliente _ClienteRepository;
@@ -57,12 +57,12 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpGet("Notes/{id}")]
-        public IActionResult GetNotesCliente(Guid id)
+        [HttpGet("Notes/{email}")]
+        public IActionResult GetNotesCliente(string email)
         {
             try
             {
-                Cliente cliente = _ClienteRepository.GetNote(id);
+                Cliente cliente = _ClienteRepository.GetNote(email);
                 return Ok(cliente);
             }
             catch (Exception ex)

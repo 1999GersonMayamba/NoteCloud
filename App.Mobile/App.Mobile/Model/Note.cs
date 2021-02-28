@@ -9,7 +9,7 @@ namespace App.Mobile.Model
          public Guid Id { get; set; }
         public Guid IdCliente { get; set; }
         public string Titulo { get; set; }
-        public string Nota { get; set; }
+        public string Nota1 { get; set; }
         public string Data { get; set; }
     }
 }

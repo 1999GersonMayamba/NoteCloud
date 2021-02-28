@@ -61,7 +61,7 @@
                     <Label
                         FontSize="15"
                         HorizontalOptions="Start"
-                        Text="{Binding Nota}"
+                        Text="{Binding Nota1}"
                         TextColor="Gray"
                         LineBreakMode="TailTruncation"
                         XAlign="Start" />
