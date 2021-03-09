@@ -17,7 +17,9 @@
     <ContentPage.ToolbarItems>
         <!--BOTÃO PARA CRIAR UMA NOVA NOTA-->
         <ToolbarItem  Priority="1" Text="Novo"  Order="Secondary" Command="{Binding NewNoteCommand}"/>
-
+       <!--BOTÃO PARA FAZER LOGOUT DA APLICAÇÃO-->
+        <ToolbarItem  Priority="2" Text="Sair"  Order="Secondary" Command="{Binding LogoutCommand}"/>
+        
         <!--BOTÃO PARA CRIAR UMA NOVA NOTA ICONE-->
         <ToolbarItem  Priority="0"  Command="{Binding NewNoteCommand}">
             <ToolbarItem.IconImageSource>
@@ -30,14 +32,14 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView   
-                        x:Name="ListaDeNotas"  
+            <ListView    
                         RowHeight="55"
                         HasUnevenRows="True" 
                         CachingStrategy="RecycleElement"
                         SeparatorColor="Gray"
                         ItemsSource="{Binding Notas}"
-                        SelectedItem="{Binding NotaSeleciodado}">
+                        SelectedItem="{Binding NotaSeleciodado}"
+                        x:Name="Notas">
 
 
                 <ListView.ItemTemplate>
@@ -45,8 +47,10 @@
                         <ViewCell>
 
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Eliminar" x:Name="Btn_Eliminar" 
-                                          CommandParameter="{Binding Id}">
+                                <MenuItem Text="Eliminar" 
+                                          CommandParameter="{Binding .}"
+                                          Command="{Binding Path=BindingContext.RemoveNoteCommand, Source={x:Reference Notas}}"
+                                          IsDestructive="True">
                                     <MenuItem.IconImageSource>
                                         <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"  
                                                          Glyph="" Color="#ffc300" Size="20"/>
@@ -54,7 +58,7 @@
                                 </MenuItem>
                             </ViewCell.ContextActions>
                             
-                            <template:NotasViewTemplate/>
+                            <template:NotasViewTemplate/>                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -63,11 +67,21 @@
             <!--</PanCake:PancakeView>-->
 
 
-            <!--<ActivityIndicator x:Name="IndicadorDeActividade" 
+            <ActivityIndicator x:Name="IndicadorDeActividade" 
                                 Grid.Row="1"
-                               IsEnabled="True" IsVisible="True" Color="#01D7BB"
-                               IsRunning="False"   VerticalOptions="Center" HorizontalOptions="Center"
-                               WidthRequest="80" HeightRequest="80"/>-->
+                               IsEnabled="True" 
+                               IsVisible="True" Color="#023047"
+                               IsRunning="{Binding IndicatorActiviy}"   
+                               VerticalOptions="CenterAndExpand" 
+                               HorizontalOptions="CenterAndExpand"
+                               WidthRequest="80" HeightRequest="80"/>
+
+            <StackLayout HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand"
+                         IsVisible="false">
+                <Label Text="Faça já a sua nota, ainda não possui notas na sua conta"
+                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

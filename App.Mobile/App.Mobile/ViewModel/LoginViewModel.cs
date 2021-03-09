@@ -20,6 +20,17 @@ namespace App.Mobile.ViewModel
 
         private string _email { get; set; }
         private string _senha { get; set; }
+        private bool _indicatorActiviy { get; set; }
+
+        public bool IndicatorActiviy
+        {
+            get => _indicatorActiviy;
+            set
+            {
+                _indicatorActiviy = value;
+
+            }
+        }
 
         public string Email
         {
@@ -46,6 +57,8 @@ namespace App.Mobile.ViewModel
 
             try
             {
+                //Habilitar indicador de actividade
+                IndicatorActiviy = true;
 
                 //Validar se preencheu todos os campos para o login
                 if (string.IsNullOrEmpty(_email))
@@ -93,6 +106,10 @@ namespace App.Mobile.ViewModel
             {
                 await Application.Current.MainPage.DisplayAlert("ENTRAR", ex.Message, "Ok");
             }
+
+            //Desabilitar indicador de actividade
+            IndicatorActiviy = true;
+
         }
 
         private async void Regiser(object obj)

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App.Mobile.View.Templetes.NotasViewTemplate">
 
+
+    
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
             <StackLayout
@@ -16,7 +18,7 @@
                     WidthRequest="30">
                     <Image.Source>
                         <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"  
-                                 Glyph="" Color="{Binding Cor}" Size="30"/>
+                                 Glyph="" Color="#ffb100" Size="30"/>
                     </Image.Source>
                 </Image>
             </StackLayout>

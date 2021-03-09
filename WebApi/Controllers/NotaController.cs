@@ -17,10 +17,12 @@ namespace WebApi.Controllers
     {
 
         private readonly INota _NotaRepository;
+        private readonly ICliente _ClienteRepository;
 
-        public NotaController(INota nota)
+        public NotaController(INota nota, ICliente cliente)
         {
             _NotaRepository = nota;
+            _ClienteRepository = cliente;
         }
         // GET: api/<NotaController>
         [HttpGet]
@@ -58,6 +60,9 @@ namespace WebApi.Controllers
         {
             try
             {
+                Cliente findClient = _ClienteRepository.GetClinteByEmail(nota.IdClienteNavigation.Email);
+                nota.IdCliente = findClient.Id;
+                nota.IdClienteNavigation = null;
                 int Result = _NotaRepository.Insert(nota);
                 if (Result == 1)
                 {
@@ -76,17 +81,50 @@ namespace WebApi.Controllers
         }
 
         // PUT api/<NotaController>/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] string value)
+        [HttpPost("update")]
+        public IActionResult UpdateNote([FromBody] Nota nota)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int Result = _NotaRepository.Update(nota);
+                if (Result == 1)
+                {
+                    Nota nota1 = _NotaRepository.FindNoteById(nota.Id);
+                    return Ok(nota);
+                }
+                else
+                {
+                    Nota nota1 = _NotaRepository.FindNoteById(nota.Id);
+                    return BadRequest(nota1);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // DELETE api/<NotaController>/5
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpGet("delete/{id}")]
+        public IActionResult Delete(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = _NotaRepository.Remove(id);
+                if(result == 1)
+                {
+                    return Ok("Nota eliminado com sucesso");
+                }
+                else
+                {
+                    return BadRequest("Não foi possivél a nota");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

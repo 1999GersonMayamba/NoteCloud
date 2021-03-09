@@ -57,6 +57,26 @@ namespace App.Mobile.Data.Api
 		}
 
 
+		public static async Task<Cliente> GetNotasAsync(string id_cliente)
+		{
+			var httpClientHandler = new HttpClientHandler();
+			httpClientHandler.ServerCertificateCustomValidationCallback =
+			(message, cert, chain, errors) => { return true; };
+
+			using (var client = new HttpClient(httpClientHandler))
+			{
+				string URL = string.Concat(ConfigSystem.URLAPI, "/cliente/Notes/", id_cliente);//ESTRUTURA DA URI DO CONTROLLER
+				client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ConfigSystem.Token);
+				var uri = new Uri(URL);
+				HttpResponseMessage response = await client.GetAsync(uri);
+				var responseString = response.Content.ReadAsStringAsync().Result;
+				var json = JsonConvert.DeserializeObject<Cliente>(responseString);
+				return json;
+			};
+
+
+		}
+
 		public async Task<string> RegistarCliente(Cliente cliente)
 		{
 			var httpClientHandler = new HttpClientHandler();

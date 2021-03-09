@@ -11,5 +11,6 @@ namespace App.Mobile.Model
         public string Titulo { get; set; }
         public string Nota1 { get; set; }
         public string Data { get; set; }
+        public virtual Cliente IdClienteNavigation { get; set; }
     }
 }

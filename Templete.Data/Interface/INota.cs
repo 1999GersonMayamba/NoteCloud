@@ -9,9 +9,11 @@ namespace Templete.Data.Interface
     {
         int Insert(Nota nota);
         int Remove(Guid id);
-        int Update(Guid id, Nota nota);
+        int Update( Nota nota);
         List<Nota> GetAll();
         Nota Get(Guid id);
         Cliente GetNote(Guid id);
+
+        Nota FindNoteById(Guid id);
     }
 }

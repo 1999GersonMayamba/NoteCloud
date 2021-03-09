@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace App.Mobile.ViewModel
@@ -116,7 +117,18 @@ namespace App.Mobile.ViewModel
 
                     }else
                     {
-                        Application.Current.MainPage = new NavigationPage(new NotesView());
+                        //Se o login ocorrer com sucesso guadar o token
+                        await SecureStorage.SetAsync("oauth_token", account1.Token);
+                        ConfigSystem.Token = account1.Token;
+                        //Guardar o email do utilizador
+                        await SecureStorage.SetAsync("email_user", account1.Email);
+                        ConfigSystem.Email = account1.Email;
+
+                        Application.Current.MainPage = new NavigationPage(new NotesView())
+                        {
+                            BarBackgroundColor = Color.FromHex("#023047")
+                        };
+
                     }
 
                 }

@@ -24,6 +24,7 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\lp\33\jl\files.cache
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\lp\34\jl\files.cache
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\lp\38\jl\files.cache
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\lp\40\jl\files.cache
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\R.txt
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\R.cs.flag
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\App.Mobile.Android.csproj.CoreCompileInputs.cache
@@ -50,6 +51,13 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\mipmap-xxhdpi\launcher_foreground.png
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\mipmap-xxxhdpi\icon.png
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\mipmap-xxxhdpi\launcher_foreground.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\logo.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\lodingpage.xml
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\noteimage.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\createaccount.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\login.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\facebookicon.png
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\googleicon.png
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\uploadflags.txt
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\App.Mobile.Android.dll
@@ -66,6 +74,7 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\mscorlib.dll
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\mscorlib.pdb
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\netstandard.dll
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.dll
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.pdb
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\System.Core.dll
@@ -142,6 +151,7 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Essentials.pdb
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Forms.Core.dll
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Forms.Core.pdb
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Forms.PancakeView.dll
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Forms.Platform.Android.dll
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Forms.Platform.dll
@@ -406,6 +416,10 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\ImageRenderer.java
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\LabelRenderer.java
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f1525830925bcb8b\MainActivity.java
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f1525830925bcb8b\SplashActivity.java
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\PancakeDrawable.java
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\PancakeViewRenderer.java
+C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\RoundedCornerOutlineProvider.java
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\mono\android\app\ApplicationRegistration.java
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\mono\android\support\design\chip\ChipGroup_OnCheckedChangeListenerImplementor.java
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\mono\android\support\design\widget\AppBarLayout_OnOffsetChangedListenerImplementor.java
@@ -489,17 +503,3 @@ C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debu
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\logo.png
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\lodingpage.xml
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f1525830925bcb8b\SplashActivity.java
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\lp\40\jl\files.cache
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Xamarin.Forms.PancakeView.dll
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\PancakeDrawable.java
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\PancakeViewRenderer.java
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\src\crc64f8908e42fa42e603\RoundedCornerOutlineProvider.java
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\noteimage.png
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\createaccount.png
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\login.png
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\facebookicon.png
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\res\drawable\googleicon.png
-C:\Projectos Visual Studio 2019\NoteCloud\App.Mobile\App.Mobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll

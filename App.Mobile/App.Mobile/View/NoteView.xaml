@@ -16,7 +16,7 @@
         <!--BOTÃO PARA ELIMINARAR  NOTA-->
         <ToolbarItem  Priority="1" Text="Eliminar"   
                       Order="Secondary"
-                      Command="{Binding DeleteNote}"/>
+                      Command="{Binding DeleteNoteCommand}"/>
 
         <!--BOTÃO PARA SALVAR A NOTA ICONE-->
         <ToolbarItem  Priority="0" 
@@ -29,7 +29,7 @@
 
         <!--BOTÃO PARA ELIMIAR A NOTA ICONE-->
         <ToolbarItem  Priority="0" 
-                      Command="{Binding DeleteNote}">
+                      Command="{Binding DeleteNoteCommand}">
             <ToolbarItem.IconImageSource>
                 <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}"  
                                  Glyph="" Color="#ffc300" Size="20"/>
@@ -42,13 +42,20 @@
     <StackLayout Background="White">
 
         <!--CAMMPO PARA O TITULO DA NOTA-->
-        <Entry Placeholder="{Binding Titulo}" x:Name="Titulo" PlaceholderColor="#023047"
-               FontAttributes="Bold" FontSize="20" Background="White"/>
+        <Entry Placeholder="Titulo" x:Name="Titulo" 
+               PlaceholderColor="#023047"
+               Text="{Binding Titulo}"
+               FontAttributes="Bold" FontSize="20" 
+               Background="White"/>
 
 
         <!--CAMPO PARA O CORPO DA NOTA-->
-        <Editor VerticalOptions="FillAndExpand"  AutoSize="TextChanges"
-                BackgroundColor="White" HorizontalOptions="FillAndExpand" Text="{Binding Nota}"/>
+        <Editor VerticalOptions="FillAndExpand"
+                Placeholder="Nota"
+                AutoSize="TextChanges"
+                BackgroundColor="White" 
+                HorizontalOptions="FillAndExpand" 
+                Text="{Binding Nota}"/>
     </StackLayout>
 
 

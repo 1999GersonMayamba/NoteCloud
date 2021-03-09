@@ -34,20 +34,20 @@
 
                 <!--FORMULARIO-->
                 <StackLayout Margin="20,15,20,0">
-                    <Label Text="Nome Utilizador"/>
-                    <Entry Text="{Binding Nome}" Keyboard="Text"/>
+                    <!--<Label Text="Nome Utilizador"/>-->
+                    <Entry Text="{Binding Nome}" Keyboard="Text" Placeholder="Nome"/>
                     
-                    <Label Text="Email"/>
-                    <Entry Text="{Binding Email}" Keyboard="Email"/>
+                    <!--<Label Text="Email"/>-->
+                    <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="Email"/>
 
-                    <Label Text="Telefone"/>
-                    <Entry Text="{Binding Telefone}" Keyboard="Telephone"/>
+                    <!--<Label Text="Telefone"/>-->
+                    <Entry Text="{Binding Telefone}" Keyboard="Telephone" Placeholder="Telefone"/>
                     
-                    <Label Text="Endereço"/>
-                    <Entry Text="{Binding Endereco}" Keyboard="Text"/>
+                    <!--<Label Text="Endereço"/>-->
+                    <Entry Text="{Binding Endereco}" Keyboard="Text" Placeholder="Endereço"/>
 
-                    <Label Text="Senha"/>
-                    <Entry Text="{Binding Senha}" IsPassword="True"/>
+                    <!--<Label Text="Senha"/>-->
+                    <Entry Text="{Binding Senha}" IsPassword="True" Placeholder="Senha"/>
                 </StackLayout>
 
                 <!--BOTÃO PARA PODER LOGAR-->

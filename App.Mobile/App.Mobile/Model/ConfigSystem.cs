@@ -33,5 +33,13 @@ namespace App.Mobile.Model
             get { return _initialpage; }
             set { _initialpage = value; }
         }
+
+        private static int _updateOrInsert;
+        public static int UpdateOrDelete
+        {
+            get { return _initialpage; }
+            set { _initialpage = value; }
+        }
+
     }
 }

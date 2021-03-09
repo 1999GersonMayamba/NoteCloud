@@ -14,5 +14,6 @@ namespace Templete.Data.Interface
         Cliente Get(Guid id);
         Cliente GetNote(string email);
 
+        Cliente GetClinteByEmail(string email);
     }
 }

@@ -2,11 +2,14 @@
 using App.Mobile.Model;
 using App.Mobile.View;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace App.Mobile.ViewModel
@@ -16,15 +19,16 @@ namespace App.Mobile.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         //private string titulo, nota;
         //private DateTime data;
-        public List<Note> Notas { get; set; }
         public Command NoteSelectedCommand { get; }
         public ICommand AddNoteCommand => new Command(AddNote);
-        public ICommand RemoveNoteCommand => new Command(RemoveNote);
+        public ICommand RemoveNoteCommand => new Command<Note>(RemoveNote);
         public ICommand UpdateNoteCommand => new Command(UpdateNote);
-
+        public ICommand GetNotesCommand { get; set; }
         public ICommand NewNoteCommand => new Command(NewNote);
-        private Note _NotaSeleciodado { get; set; }
+        public ICommand LogoutCommand => new Command(LogoutApp);
+        private bool _IndicatorActiviy { get; set; }
 
+        private Note _NotaSeleciodado { get; set; }     
         public Note NotaSeleciodado
         {
             get => _NotaSeleciodado;
@@ -33,12 +37,29 @@ namespace App.Mobile.ViewModel
                 if(_NotaSeleciodado != value)
                 {
                     _NotaSeleciodado = value;
-                    NotaSelecled(); //Quando for selecionado uma nota invocar este método
-                    //var args = new PropertyChangedEventArgs(nameof(NotaSeleciodado));
-                    //PropertyChanged?.Invoke(this, args);
+                    NotaSelecled(); //Método invocado quando se fazer o set da propriedade
                 }
             }
         }
+
+        public bool IndicatorActiviy
+        {
+            get => _IndicatorActiviy;
+            set {   _IndicatorActiviy = value;}
+        }
+
+        private API_Cliente apiService;
+
+        private ObservableCollection<Note> notas;
+        public ObservableCollection<Note> Notas
+        {
+            get { return notas; }
+            set
+            {
+                notas = value;
+            }
+        }
+
 
         /// <summary>
         /// 
@@ -47,6 +68,7 @@ namespace App.Mobile.ViewModel
         {
             try
             {
+                ConfigSystem.UpdateOrDelete = 1;
                 //await Application.Current.MainPage.DisplayAlert(_NotaSeleciodado.Titulo, _NotaSeleciodado.Nota, "Ok");
                 await Application.Current.MainPage.Navigation.PushAsync(new NoteView(_NotaSeleciodado));
             }
@@ -56,31 +78,55 @@ namespace App.Mobile.ViewModel
             }
         }
 
-        public NotesViewModel()
+        public   NotesViewModel()
         {
-
-            ListaDeNotas();
 
         }
 
-        private async void ListaDeNotas()
+
+        private async void LogoutApp(object obj)
         {
             try
             {
-                //Trazer as notas de um determinado utilizador
-                API_Cliente aPI_Cliente = new API_Cliente();
-                Cliente cliente = await aPI_Cliente.NotasCliente(ConfigSystem.Email);
+                //Habilitar o indicador de actividade
+                IndicatorActiviy = true;
 
-                if(cliente.Nota.Count == 0)
+                bool DialogResult = await Application.Current.MainPage.DisplayAlert("Sair", "Tem a certeza que deseja sair da aplicação", "SIM", "NÃO");
+
+                if(DialogResult == true)
                 {
+                    //Remover o token da security storage
+                    SecureStorage.Remove("oauth_token");
+                    ConfigSystem.Token = null;
+                    //Remover o email da securiry storage
+                    SecureStorage.Remove("email_user");
+                    ConfigSystem.Email = null;
 
-                }else
-                {
-
-                    Notas = new List<Note>();
-                    Notas = cliente.Nota as List<Note>;
-                    int total = Notas.Count;
+                    Application.Current.MainPage = new NavigationPage(new LoginView())
+                    {
+                        BarBackgroundColor = Color.FromHex("#023047")
+                    };
                 }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Sair", ex.Message, "Ok");
+
+            }
+
+            //Desabilitar o indicador de actividade
+            IndicatorActiviy = true;
+        }
+
+
+        public async void ListaDeNotas()
+        {
+            try
+            {
+
+                var list = await apiService.NotasCliente(ConfigSystem.Email);
+                Notas = new ObservableCollection<Note>(list.Nota);
+
             }
             catch(Exception ex)
             {
@@ -94,6 +140,7 @@ namespace App.Mobile.ViewModel
         {
             try
             {
+                ConfigSystem.UpdateOrDelete = 0;
                 await Application.Current.MainPage.Navigation.PushAsync(new NoteView());
             }
             catch(Exception ex)
@@ -107,9 +154,30 @@ namespace App.Mobile.ViewModel
 
         }
 
-        public void RemoveNote()
+        public async void RemoveNote(Note note)
         {
+            try
+            {
+                //Habilitar o indicador de actividade
+                IndicatorActiviy = true;
 
+                bool DialogResult = await Application.Current.MainPage.DisplayAlert("NOTA", "Tem a certeza que deseja eliminar está nota?", "SIM", "NÃO");
+
+                if (DialogResult == true)
+                {
+                    API_Nota aPI_Nota = new API_Nota();
+                    var DeleteResponse = await aPI_Nota.DeleteNote(note.Id);
+                    await Application.Current.MainPage.DisplayAlert("NOTA", DeleteResponse, "Ok");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("NOTAS", ex.Message, "Ok");
+            }
+
+            //Desabilitar o indicador de actividade
+            IndicatorActiviy = false;
         }
 
         public void UpdateNote()
