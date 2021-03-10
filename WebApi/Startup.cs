@@ -39,6 +39,9 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
 
+            //Adicionar configuração do Swagger
+            services.AddSwaggerConfiguration();
+
             //INJEÇÃO DE INDEPENDECIA PARA A CAMA DO REPOSITORIO
             //services.AddSingleton<ICliente, ClienteRespository>();
             //services.AddSingleton<INota, NotaRepository>();
@@ -125,6 +128,10 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseDatabaseConfiguration();
+
+            app.UseSwaggerConfiguration();
 
             app.UseHttpsRedirection();
 

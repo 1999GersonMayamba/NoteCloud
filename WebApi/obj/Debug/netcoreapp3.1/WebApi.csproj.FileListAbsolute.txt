@@ -145,3 +145,8 @@ C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\zh-Hant
 C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Templete.Identity.dll
 C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Templete.Identity.pdb
 C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Projectos Visual Studio 2019\NoteCloud\WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Projectos Visual Studio 2019\NoteCloud\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cs
